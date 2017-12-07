@@ -13,9 +13,12 @@ def solve_captcha(captcha):
     ret_val = 0
     captcha = str(captcha)
 
+    # Iterate through the list checking if consecutive numbers are the same
+    # and a special case of checking the last vs the first element.
     for i in range(len(captcha)-1):
         j = i+1
         if captcha[i] == captcha[j]:
+            # Sum up the ones that are the same
             ret_val += int(captcha[i])
 
     if captcha[-1] == captcha[0]:

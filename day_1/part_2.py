@@ -15,6 +15,8 @@ def solve_captcha(captcha):
     full_length = len(captcha)
     half_length = full_length/2
 
+    # Iterate through the string with the second index acting as
+    # if it were a circular buffer offset by half the length
     for i in range(full_length):
         j = i+half_length
         if captcha[i] == captcha[j % full_length]:
